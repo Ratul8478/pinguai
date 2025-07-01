@@ -1,0 +1,11 @@
+
+{
+  "name": "PinGu AI",
+  "description": "A personal AI assistant for developers featuring a chatbot, image generator, voice assistant, and powerful code tools, all under the friendly guidance of PinGu.",
+  "requestFramePermissions": [
+    "microphone",
+    "display-capture",
+    "camera"
+  ],
+  "prompt": ""
+}

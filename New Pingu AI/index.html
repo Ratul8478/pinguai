@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PinGu AI</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For custom scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
+      /* For voice assistant speaking indicator */
+      @keyframes speak {
+        0% { transform: scaleY(0.1); }
+        100% { transform: scaleY(1.0); }
+      }
+      .speak-bar {
+        animation: speak 0.6s ease-in-out infinite alternate;
+      }
+      /* For 3D voice circle effect */
+      .siri-wave {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        border-width: 3px;
+        border-style: solid;
+      }
+      @keyframes siri-animation {
+        0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.8; }
+        90% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+      }
+
+      .siri-wave1 { border-color: #a5b4fc; animation: siri-animation 2s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+      .siri-wave2 { border-color: #818cf8; animation: siri-animation 2s infinite cubic-bezier(0.4, 0, 0.2, 1); animation-delay: 0.5s; }
+      .siri-wave3 { border-color: #6366f1; animation: siri-animation 2s infinite cubic-bezier(0.4, 0, 0.2, 1); animation-delay: 1.0s; }
+      .siri-wave4 { border-color: #4f46e5; animation: siri-animation 2s infinite cubic-bezier(0.4, 0, 0.2, 1); animation-delay: 1.5s; }
+      
+      /* For suggestion fade-in */
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+          animation: fade-in 0.5s ease-out forwards;
+      }
+
+      /* For landing page penguin */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.7.0",
+    "immer": "https://esm.sh/immer@^10.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
